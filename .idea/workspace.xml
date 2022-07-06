@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9654dca-02b8-453e-be4e-6b4e9ad71654" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Beans/Etudiant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Beans/Filiere.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d9654dca-02b8-453e-be4e-6b4e9ad71654" name="Changes" comment="Ariana">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gertufhdbc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Beans/Etudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Beans/Etudiant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Beans/Filiere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Beans/Filiere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "C:/Users/Alexis/Desktop/Gestion_Hotel",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
@@ -88,6 +86,14 @@
       <option name="presentableId" value="Default" />
       <updated>1657095058123</updated>
     </task>
+    <task id="LOCAL-00001" summary="Ariana">
+      <created>1657100615112</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1657100615112</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,5 +106,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ariana" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ariana" />
   </component>
 </project>
