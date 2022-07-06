@@ -67,9 +67,8 @@ public class Etudiant {
             Statement stmt = conn.createStatement();
             //étape 4: exécuter la requête
             System.out.println("Insertion...");
-
             String sql = "INSERT INTO etudiant2 " +
-                    "VALUES (1, 'Grande', 'Ariana', '1')";
+                    "VALUES (1 , 'Grande' , 'Ariana' , '1')";
             stmt.executeUpdate(sql);
             sql = "INSERT INTO etudiant2 " +
                     "VALUES (2, 'Smith', 'Will', '1')";
@@ -102,8 +101,41 @@ public class Etudiant {
         }
     }
 
+    public void AjoutEtudiantSaisie(){
+        try {
+            //étape 1: charger la classe driver
+            Class.forName("org.postgresql.Driver");
+            //étape 2: créer l'objet de connexion
+            Connection conn = DriverManager.getConnection(
+                    "jdbc:postgresql://localhost:5432/Gestion_Etudiant", "postgres", "Kara59");
+            //étape 3: créer l'objet statement
+            Statement stmt = conn.createStatement();
+            //étape 4: exécuter la requête
 
+            String nom;
+            String prenom;
+            int id;
+            int Filiere_id;
+            System.out.println("Choisissez un id");
+            id = sc.nextInt();
+            sc.nextLine();
+            System.out.println("Choissisez un prénom");
+            prenom = sc.nextLine();
+            System.out.println("Choisissez un nom");
+            nom = sc.nextLine();
+            System.out.println("Entrez l'id de la filière");
+            Filiere_id = sc.nextInt();
+            String sql = "INSERT INTO etudiant2 " +
+                    "VALUES ("+id+"  , '"+nom+"', '"+prenom+"', "+Filiere_id+")";
+            stmt.executeUpdate(sql);
 
+            System.out.println("Données insérés dans la table...");
+            //étape 5: fermez l'objet de connexion
+            conn.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
 
+}
 
 }

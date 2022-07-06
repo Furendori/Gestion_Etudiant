@@ -7,9 +7,9 @@ public class main {
         Etudiant etude = new Etudiant();
         Filiere filiere = new Filiere();
 
-        etude.affichageEtudiant();
-        filiere.affichageFilière();
-//        etude.AjoutEtudiant();
+//        etude.affichageEtudiant();
+//        filiere.affichageFilière();
+        etude.AjoutEtudiantSaisie();
 //        etude.CreateTable();
     }
 }
