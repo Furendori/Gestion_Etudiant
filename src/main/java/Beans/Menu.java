@@ -50,7 +50,7 @@ public class Menu {
                     etude.AjoutEtudiantSaisie();
                     break;
                 case 5:
-                    filiere.affichageFilière();
+                    filiere.AjoutFilièretSaisie();
                     break;
                 case 6:
 

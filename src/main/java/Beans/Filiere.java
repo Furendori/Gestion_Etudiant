@@ -24,7 +24,7 @@ public class Filiere {
             //étape 4: exécuter la requéte
             String sql = "CREATE TABLE Filiere2 " +
                     "(numFiliere NUMERIC not NULL, " +
-                    " nomFiliere VARCHAR(50);";
+                    " nomFiliere VARCHAR(50));";
             stmt.executeUpdate(sql);
             //étape 5: fermez l'objet de connexion
             conn.close();
@@ -69,7 +69,7 @@ public class Filiere {
             String sql = "INSERT INTO Filiere2 " +
                     "VALUES (1 , 'Electronique')";
             stmt.executeUpdate(sql);
-             sql = "INSERT INTO Filière2 " +
+             sql = "INSERT INTO Filiere2 " +
                     "VALUES (2 , 'Informatique')";
             stmt.executeUpdate(sql);
             System.out.println("Données insérés dans la table...");
@@ -102,7 +102,7 @@ public class Filiere {
             nomFiliere = sc.nextLine();
 
 
-            String sql = "INSERT INTO Filière2 " +
+            String sql = "INSERT INTO Filiere2 " +
                     "VALUES ("+id_Filiere+"  , '"+nomFiliere+"')";
             stmt.executeUpdate(sql);
 
