@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Objects;
 import java.util.Scanner;
+
+import static Beans.Filiere.getDBInfo;
 
 public class Etudiant {
 
@@ -16,7 +19,9 @@ public class Etudiant {
             Class.forName("org.postgresql.Driver");
             //étape 2: créer l'objet de connexion
             Connection conn = DriverManager.getConnection(
-                    "jdbc:postgresql://localhost:5432/Gestion_Etudiant", "postgres", "julian59");
+                    Objects.requireNonNull(getDBInfo("DB_URL")),
+                    Objects.requireNonNull(getDBInfo("DB_USER")),
+                    Objects.requireNonNull(getDBInfo("DB_PASSWORD")));
             //étape 3: créer l'objet statement
             Statement stmt = conn.createStatement();
             //étape 4: exécuter la requête
@@ -38,7 +43,9 @@ public class Etudiant {
                 Class.forName("org.postgresql.Driver");
                 //étape 2: créer l'objet de connexion
                 Connection conn = DriverManager.getConnection(
-                        "jdbc:postgresql://localhost:5432/Gestion_Etudiant", "postgres", "julian59");
+                        Objects.requireNonNull(getDBInfo("DB_URL")),
+                        Objects.requireNonNull(getDBInfo("DB_USER")),
+                        Objects.requireNonNull(getDBInfo("DB_PASSWORD")));
                 //étape 3: créer l'objet statement
                 Statement stmt = conn.createStatement();
                 ResultSet res = stmt.executeQuery("SELECT * FROM etudiant2");
@@ -61,7 +68,9 @@ public class Etudiant {
                 Class.forName("org.postgresql.Driver");
                 //étape 2: créer l'objet de connexion
                 Connection conn = DriverManager.getConnection(
-                        "jdbc:postgresql://localhost:5432/Gestion_Etudiant", "postgres", "julian59");
+                        Objects.requireNonNull(getDBInfo("DB_URL")),
+                        Objects.requireNonNull(getDBInfo("DB_USER")),
+                        Objects.requireNonNull(getDBInfo("DB_PASSWORD")));
                 //étape 3: créer l'objet statement
                 Statement stmt = conn.createStatement();
                 //étape 4: exécuter la requéte
@@ -86,7 +95,9 @@ public class Etudiant {
                 Class.forName("org.postgresql.Driver");
                 //étape 2: créer l'objet de connexion
                 Connection conn = DriverManager.getConnection(
-                        "jdbc:postgresql://localhost:5432/Gestion_Etudiant", "postgres", "julian59");
+                        Objects.requireNonNull(getDBInfo("DB_URL")),
+                        Objects.requireNonNull(getDBInfo("DB_USER")),
+                        Objects.requireNonNull(getDBInfo("DB_PASSWORD")));
                 //étape 3: créer l'objet statement
                 Statement stmt = conn.createStatement();
                 //étape 4: exécuter la requête
@@ -131,7 +142,9 @@ public class Etudiant {
                 Class.forName("org.postgresql.Driver");
                 //étape 2: créer l'objet de connexion
                 Connection conn = DriverManager.getConnection(
-                        "jdbc:postgresql://localhost:5432/Gestion_Etudiant", "postgres", "julian59");
+                        Objects.requireNonNull(getDBInfo("DB_URL")),
+                        Objects.requireNonNull(getDBInfo("DB_USER")),
+                        Objects.requireNonNull(getDBInfo("DB_PASSWORD")));
                 //étape 3: créer l'objet statement
                 Statement stmt = conn.createStatement();
                 //étape 4: exécuter la requête

@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9654dca-02b8-453e-be4e-6b4e9ad71654" name="Changes" comment="Ariana love &lt;3">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2022_10_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2022_10_54__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Beans/Etudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Beans/Etudiant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Beans/Filiere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Beans/Filiere.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Beans/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Beans/Menu.java" afterDir="false" />
     </list>
@@ -108,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657184069661</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Ariana love &lt;3">
+      <created>1657185204893</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657185204893</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
