@@ -19,7 +19,7 @@ public class Etudiant {
                     "jdbc:postgresql://localhost:5432/Gestion_Etudiant", "postgres", "Kara59");
             //étape 3: créer l'objet statement
             Statement stmt = conn.createStatement();
-            ResultSet res = stmt.executeQuery("SELECT * FROM etudiant");
+            ResultSet res = stmt.executeQuery("SELECT * FROM etudiant2");
             //étape 4: exécuter la requête
             while (res.next())
                 System.out.println("L'id de l'étudiant : "+res.getInt(1) +  " Le nom de l'étudiant est :  "+ res.getString(2) + " Le prenom de l'étudiant est :  " + res.getString(3) +
@@ -43,7 +43,9 @@ public class Etudiant {
                     //étape 3: créer l'objet statement
                     Statement stmt = conn.createStatement();
                     //étape 4: exécuter la requéte
-                    String sql = "CREATE TABLE etudiant2 " +
+
+                    String sql =
+                            "CREATE TABLE IF NOT EXISTS etudiant2 " +
                             "(numEtud NUMERIC not NULL, " +
                             " nomEtud VARCHAR(50), " +
                             " prenomEtud VARCHAR(50), " +

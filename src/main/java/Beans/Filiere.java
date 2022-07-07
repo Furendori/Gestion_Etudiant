@@ -22,7 +22,7 @@ public class Filiere {
             //étape 3: créer l'objet statement
             Statement stmt = conn.createStatement();
             //étape 4: exécuter la requéte
-            String sql = "CREATE TABLE Filiere2 " +
+            String sql = "CREATE TABLE IF NOT EXISTS Filiere2 "  +
                     "(numFiliere NUMERIC not NULL, " +
                     " nomFiliere VARCHAR(50));";
             stmt.executeUpdate(sql);
