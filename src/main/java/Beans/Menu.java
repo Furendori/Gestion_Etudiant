@@ -24,11 +24,13 @@ public class Menu {
             System.out.println("*                                                                                            *");
             System.out.println("*  Tapez 5 :  Ajouts d'une nouvelle filière en entrant ses informations                      *");
             System.out.println("*                                                                                            *");
-            System.out.println("*  Tapez 6 :  Suppression d'un étudiant                                                      *");
+            System.out.println("*  Tapez 6 :  Modifier un étudiant                                                           *");
             System.out.println("*                                                                                            *");
-            System.out.println("*  Tapez 7 :  Suppression d'une filière                                                      *");
+            System.out.println("*  Tapez 7 :  Suppression d'un étudiant                                                      *");
             System.out.println("*                                                                                            *");
-            System.out.println("*  Tapez 8 : Quitter le programme                                                            *");
+            System.out.println("*  Tapez 8 :  Suppression d'une filière                                                      *");
+            System.out.println("*                                                                                            *");
+            System.out.println("*  Tapez 9 : Quitter le programme                                                            *");
             System.out.println("*                                                                                            *");
             System.out.println("**********************************************************************************************");
             System.out.println("Entre votre choix ?");
@@ -53,11 +55,15 @@ public class Menu {
                     filiere.AjoutFilieretSaisie();
                     break;
                 case 6:
-                    etude.suppressionEtudiant();
+                    etude.ModifierEtudiant();
+                    break;
                 case 7:
+                    etude.suppressionEtudiant();
+                    break;
+                case 8:
                     filiere.suppressionFiliere();
             }
-        } while(choix != 8);
+        } while(choix != 9);
 
 
 
