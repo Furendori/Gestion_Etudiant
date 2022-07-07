@@ -53,7 +53,7 @@ public class Menu {
                     filiere.AjoutFilièretSaisie();
                     break;
                 case 6:
-
+                    etude.suppressionEtudiant();
                 case 7:
 
             }
