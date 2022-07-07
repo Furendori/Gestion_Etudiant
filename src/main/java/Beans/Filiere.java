@@ -80,7 +80,7 @@ public class Filiere {
     }
 
 
-    public void AjoutFilièretSaisie(){
+    public void AjoutFilièretSaisie() {
         try {
             //étape 1: charger la classe driver
             Class.forName("org.postgresql.Driver");
@@ -102,7 +102,7 @@ public class Filiere {
 
 
             String sql = "INSERT INTO Filiere2 " +
-                    "VALUES ("+id_Filiere+"  , '"+nomFiliere+"')";
+                    "VALUES (" + id_Filiere + "  , '" + nomFiliere + "')";
             stmt.executeUpdate(sql);
 
 
@@ -112,6 +112,9 @@ public class Filiere {
         } catch (Exception e) {
             System.out.println(e);
         }
-
     }
-}
+
+        }
+
+
+

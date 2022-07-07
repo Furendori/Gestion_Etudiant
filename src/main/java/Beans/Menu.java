@@ -55,7 +55,7 @@ public class Menu {
                 case 6:
 
                 case 7:
-
+                    filiere.SupprimerUneFiliere();
             }
         } while(choix != 8);
 
