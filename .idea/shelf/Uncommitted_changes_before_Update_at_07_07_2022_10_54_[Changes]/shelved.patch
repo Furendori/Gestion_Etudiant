@@ -1,0 +1,241 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"11\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 715889f0c29fd75df996120d8fb0364ad4c172f2)
++++ b/.idea/misc.xml	(date 1657178006862)
+@@ -8,7 +8,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/Beans/Etudiant.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Beans;\r\n\r\nimport java.sql.Connection;\r\nimport java.sql.DriverManager;\r\nimport java.sql.ResultSet;\r\nimport java.sql.Statement;\r\nimport java.util.Scanner;\r\n\r\npublic class Etudiant {\r\n\r\n    Scanner sc = new Scanner(System.in);\r\n\r\n    public void affichageEtudiant() {\r\n        try {\r\n            //étape 1: charger la classe de driver\r\n            Class.forName(\"org.postgresql.Driver\");\r\n            //étape 2: créer l'objet de connexion\r\n            Connection conn = DriverManager.getConnection(\r\n                    \"jdbc:postgresql://localhost:5432/Gestion_Etudiant\", \"postgres\", \"Kara59\");\r\n            //étape 3: créer l'objet statement\r\n            Statement stmt = conn.createStatement();\r\n            ResultSet res = stmt.executeQuery(\"SELECT * FROM etudiant\");\r\n            //étape 4: exécuter la requête\r\n            while (res.next())\r\n                System.out.println(\"L'id de l'étudiant : \"+res.getInt(1) +  \" Le nom de l'étudiant est :  \"+ res.getString(2) + \" Le prenom de l'étudiant est :  \" + res.getString(3) +\r\n                        \"   \"+ res.getInt(4)\r\n                );\r\n            //étape 5: fermez l'objet de connexion\r\n            conn.close();\r\n        } catch (Exception e) {\r\n            System.out.println(e);\r\n        }\r\n    }\r\n\r\n            public void CreateTable() {\r\n\r\n                try {\r\n                    //étape 1: charger la classe driver\r\n                    Class.forName(\"org.postgresql.Driver\");\r\n                    //étape 2: créer l'objet de connexion\r\n                    Connection conn = DriverManager.getConnection(\r\n                            \"jdbc:postgresql://localhost:5432/Gestion_Etudiant\", \"postgres\", \"Kara59\");\r\n                    //étape 3: créer l'objet statement\r\n                    Statement stmt = conn.createStatement();\r\n                    //étape 4: exécuter la requéte\r\n                    String sql = \"CREATE TABLE etudiant2 \" +\r\n                            \"(numEtud NUMERIC not NULL, \" +\r\n                            \" nomEtud VARCHAR(50), \" +\r\n                            \" prenomEtud VARCHAR(50), \" +\r\n                            \" filiereEtud NUMERIC not null);\";\r\n                    stmt.executeUpdate(sql);\r\n                    //étape 5: fermez l'objet de connexion\r\n                    conn.close();\r\n                } catch (Exception e) {\r\n                    System.out.println(e);\r\n                }\r\n            }\r\n\r\n    public void AjoutEtudiant() {\r\n        try {\r\n            //étape 1: charger la classe driver\r\n            Class.forName(\"org.postgresql.Driver\");\r\n            //étape 2: créer l'objet de connexion\r\n            Connection conn = DriverManager.getConnection(\r\n                    \"jdbc:postgresql://localhost:5432/Gestion_Etudiant\", \"postgres\", \"Kara59\");\r\n            //étape 3: créer l'objet statement\r\n            Statement stmt = conn.createStatement();\r\n            //étape 4: exécuter la requête\r\n            System.out.println(\"Insertion...\");\r\n            String sql = \"INSERT INTO etudiant2 \" +\r\n                    \"VALUES (1 , 'Grande' , 'Ariana' , '1')\";\r\n            stmt.executeUpdate(sql);\r\n            sql = \"INSERT INTO etudiant2 \" +\r\n                    \"VALUES (2, 'Smith', 'Will', '1')\";\r\n            stmt.executeUpdate(sql);\r\n            sql = \"INSERT INTO etudiant2 \" +\r\n                    \"VALUES (3, 'Black', 'Jack', '1')\";\r\n            stmt.executeUpdate(sql);\r\n            sql = \"INSERT INTO etudiant2 \" +\r\n                    \"VALUES (4, 'Brasseur', 'Julian', '1')\";\r\n            stmt.executeUpdate(sql);\r\n            sql = \"INSERT INTO etudiant2 \" +\r\n                    \"VALUES (5, 'Delecroix', 'Alexis', '2')\";\r\n            stmt.executeUpdate(sql);\r\n            sql = \"INSERT INTO etudiant2 \" +\r\n                    \"VALUES (6, 'Grande', 'Sylvain', '2')\";\r\n            stmt.executeUpdate(sql);\r\n            sql = \"INSERT INTO etudiant2 \" +\r\n                    \"VALUES (7, 'Riessfeld', 'Julis-Alexia', '2')\";\r\n            stmt.executeUpdate(sql);\r\n            sql = \"INSERT INTO etudiant2 \" +\r\n                    \"VALUES (8, 'Rollins', 'Seth', '2')\";\r\n            stmt.executeUpdate(sql);\r\n\r\n\r\n            System.out.println(\"Données insérés dans la table...\");\r\n            //étape 5: fermez l'objet de connexion\r\n            conn.close();\r\n        } catch (Exception e) {\r\n            System.out.println(e);\r\n        }\r\n    }\r\n\r\n    public void AjoutEtudiantSaisie(){\r\n        try {\r\n            //étape 1: charger la classe driver\r\n            Class.forName(\"org.postgresql.Driver\");\r\n            //étape 2: créer l'objet de connexion\r\n            Connection conn = DriverManager.getConnection(\r\n                    \"jdbc:postgresql://localhost:5432/Gestion_Etudiant\", \"postgres\", \"Kara59\");\r\n            //étape 3: créer l'objet statement\r\n            Statement stmt = conn.createStatement();\r\n            //étape 4: exécuter la requête\r\n\r\n            String nom;\r\n            String prenom;\r\n            int id;\r\n            int Filiere_id;\r\n            System.out.println(\"Choisissez un id\");\r\n            id = sc.nextInt();\r\n            sc.nextLine();\r\n            System.out.println(\"Choissisez un prénom\");\r\n            prenom = sc.nextLine();\r\n            System.out.println(\"Choisissez un nom\");\r\n            nom = sc.nextLine();\r\n            System.out.println(\"Entrez l'id de la filière\");\r\n            Filiere_id = sc.nextInt();\r\n            String sql = \"INSERT INTO etudiant2 \" +\r\n                    \"VALUES (\"+id+\"  , '\"+nom+\"', '\"+prenom+\"', \"+Filiere_id+\")\";\r\n            stmt.executeUpdate(sql);\r\n\r\n            System.out.println(\"Données insérés dans la table...\");\r\n            //étape 5: fermez l'objet de connexion\r\n            conn.close();\r\n        } catch (Exception e) {\r\n            System.out.println(e);\r\n        }\r\n\r\n}\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Beans/Etudiant.java b/src/main/java/Beans/Etudiant.java
+--- a/src/main/java/Beans/Etudiant.java	(revision 715889f0c29fd75df996120d8fb0364ad4c172f2)
++++ b/src/main/java/Beans/Etudiant.java	(date 1657181898402)
+@@ -10,13 +10,38 @@
+ 
+     Scanner sc = new Scanner(System.in);
+ 
++    public void supressionEtudiant() {
++        try {
++            //étape 1: charger la classe de driver
++            Class.forName("org.postgresql.Driver");
++            //étape 2: créer l'objet de connexion
++            Connection conn = DriverManager.getConnection(
++                    "jdbc:postgresql://localhost:5432/Gestion_Etudiant", "postgres", "julian59");
++            //étape 3: créer l'objet statement
++            Statement stmt = conn.createStatement();
++            ResultSet res = stmt.executeQuery("SELECT * FROM Etudiant");
++            //étape 4: exécuter la requête
++            while (res.next())
++                System.out.println("Choisissez l'id de l'élève que vous voulez supprimer");
++            int id = sc.nextInt();
++            String sql = "DELETE FROM Etudiant" +
++                    "("+id+")";
++            stmt.executeUpdate(sql);
++            System.out.println("Données supprimées de la table...");
++            //étape 5: fermez l'objet de connexion
++            conn.close();
++        } catch (Exception e) {
++            System.out.println(e);
++        }
++    }
++
+     public void affichageEtudiant() {
+         try {
+             //étape 1: charger la classe de driver
+             Class.forName("org.postgresql.Driver");
+             //étape 2: créer l'objet de connexion
+             Connection conn = DriverManager.getConnection(
+-                    "jdbc:postgresql://localhost:5432/Gestion_Etudiant", "postgres", "Kara59");
++                    "jdbc:postgresql://localhost:5432/Gestion_Etudiant", "postgres", "julian59");
+             //étape 3: créer l'objet statement
+             Statement stmt = conn.createStatement();
+             ResultSet res = stmt.executeQuery("SELECT * FROM etudiant");
+@@ -39,12 +64,13 @@
+                     Class.forName("org.postgresql.Driver");
+                     //étape 2: créer l'objet de connexion
+                     Connection conn = DriverManager.getConnection(
+-                            "jdbc:postgresql://localhost:5432/Gestion_Etudiant", "postgres", "Kara59");
++                            "jdbc:postgresql://localhost:5432/Gestion_Etudiant", "postgres", "julian59");
+                     //étape 3: créer l'objet statement
+                     Statement stmt = conn.createStatement();
+                     //étape 4: exécuter la requéte
+-                    String sql = "CREATE TABLE etudiant2 " +
+-                            "(numEtud NUMERIC not NULL, " +
++                    String sql = "IF NOT EXISTS" +
++                            "(CREATE TABLE Etudiant " +
++                            "numEtud NUMERIC not NULL, " +
+                             " nomEtud VARCHAR(50), " +
+                             " prenomEtud VARCHAR(50), " +
+                             " filiereEtud NUMERIC not null);";
+@@ -62,33 +88,33 @@
+             Class.forName("org.postgresql.Driver");
+             //étape 2: créer l'objet de connexion
+             Connection conn = DriverManager.getConnection(
+-                    "jdbc:postgresql://localhost:5432/Gestion_Etudiant", "postgres", "Kara59");
++                    "jdbc:postgresql://localhost:5432/Gestion_Etudiant", "postgres", "julian59");
+             //étape 3: créer l'objet statement
+             Statement stmt = conn.createStatement();
+             //étape 4: exécuter la requête
+             System.out.println("Insertion...");
+-            String sql = "INSERT INTO etudiant2 " +
++            String sql = "INSERT INTO Etudiant " +
+                     "VALUES (1 , 'Grande' , 'Ariana' , '1')";
+             stmt.executeUpdate(sql);
+-            sql = "INSERT INTO etudiant2 " +
++            sql = "INSERT INTO Etudiant " +
+                     "VALUES (2, 'Smith', 'Will', '1')";
+             stmt.executeUpdate(sql);
+-            sql = "INSERT INTO etudiant2 " +
++            sql = "INSERT INTO Etudiant " +
+                     "VALUES (3, 'Black', 'Jack', '1')";
+             stmt.executeUpdate(sql);
+-            sql = "INSERT INTO etudiant2 " +
++            sql = "INSERT INTO Etudiant " +
+                     "VALUES (4, 'Brasseur', 'Julian', '1')";
+             stmt.executeUpdate(sql);
+-            sql = "INSERT INTO etudiant2 " +
++            sql = "INSERT INTO Etudiant " +
+                     "VALUES (5, 'Delecroix', 'Alexis', '2')";
+             stmt.executeUpdate(sql);
+-            sql = "INSERT INTO etudiant2 " +
++            sql = "INSERT INTO Etudiant " +
+                     "VALUES (6, 'Grande', 'Sylvain', '2')";
+             stmt.executeUpdate(sql);
+-            sql = "INSERT INTO etudiant2 " +
++            sql = "INSERT INTO Etudiant " +
+                     "VALUES (7, 'Riessfeld', 'Julis-Alexia', '2')";
+             stmt.executeUpdate(sql);
+-            sql = "INSERT INTO etudiant2 " +
++            sql = "INSERT INTO Etudiant " +
+                     "VALUES (8, 'Rollins', 'Seth', '2')";
+             stmt.executeUpdate(sql);
+ 
+@@ -107,7 +133,7 @@
+             Class.forName("org.postgresql.Driver");
+             //étape 2: créer l'objet de connexion
+             Connection conn = DriverManager.getConnection(
+-                    "jdbc:postgresql://localhost:5432/Gestion_Etudiant", "postgres", "Kara59");
++                    "jdbc:postgresql://localhost:5432/Gestion_Etudiant", "postgres", "julian59");
+             //étape 3: créer l'objet statement
+             Statement stmt = conn.createStatement();
+             //étape 4: exécuter la requête
+@@ -125,7 +151,7 @@
+             nom = sc.nextLine();
+             System.out.println("Entrez l'id de la filière");
+             Filiere_id = sc.nextInt();
+-            String sql = "INSERT INTO etudiant2 " +
++            String sql = "INSERT INTO Etudiant " +
+                     "VALUES ("+id+"  , '"+nom+"', '"+prenom+"', "+Filiere_id+")";
+             stmt.executeUpdate(sql);
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"d9654dca-02b8-453e-be4e-6b4e9ad71654\" name=\"Changes\" comment=\"Ariana love &lt;3\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Beans/Filiere.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Beans/Filiere.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Beans/Menu.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Beans/Menu.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/main.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2BYtsnPxVQeL7uS1IMcUle8Wmbe\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/Alexis/Desktop/Gestion_Hotel\",\r\n    \"project.structure.last.edited\": \"Project\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"main\" />\r\n      <module name=\"Gestion_Etudiant\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\r\n      <option name=\"filePath\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"d9654dca-02b8-453e-be4e-6b4e9ad71654\" name=\"Changes\" comment=\"\" />\r\n      <created>1657095058123</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1657095058123</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Ariana\">\r\n      <created>1657100615112</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1657100615112</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Ariana love &lt;3\">\r\n      <created>1657111370999</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1657111370999</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Ariana love &lt;3\">\r\n      <created>1657114099019</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1657114099019</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Ariana love &lt;3\">\r\n      <created>1657116748987</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1657116748987</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Ariana\" />\r\n    <MESSAGE value=\"Ariana love &lt;3\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Ariana love &lt;3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 715889f0c29fd75df996120d8fb0364ad4c172f2)
++++ b/.idea/workspace.xml	(date 1657184003574)
+@@ -4,10 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="d9654dca-02b8-453e-be4e-6b4e9ad71654" name="Changes" comment="Ariana love &lt;3">
++    <list default="true" id="d9654dca-02b8-453e-be4e-6b4e9ad71654" name="Changes" comment="Modif CreateTable">
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Beans/Filiere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Beans/Filiere.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Beans/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Beans/Menu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Beans/Etudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Beans/Etudiant.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -41,31 +41,20 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "last_opened_file_path": "C:/Users/Alexis/Desktop/Gestion_Hotel",
+-    "project.structure.last.edited": "Project",
+-    "project.structure.proportion": "0.15",
+-    "project.structure.side.proportion": "0.2"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/Alexis/Desktop/Gestion_Hotel&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RunManager">
+     <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="main" />
+       <module name="Gestion_Etudiant" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration default="true" type="JetRunConfigurationType">
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+-      <option name="filePath" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+@@ -130,6 +119,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Ariana" />
+     <MESSAGE value="Ariana love &lt;3" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Ariana love &lt;3" />
++    <MESSAGE value="Modif CreateTable" />
++    <option name="LAST_COMMIT_MESSAGE" value="Modif CreateTable" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import Beans.Etudiant;\r\nimport Beans.Filiere;\r\nimport Beans.Menu;\r\n\r\npublic class main {\r\n    public static void main(String[] args) {\r\n        Etudiant etude = new Etudiant();\r\n        Filiere filiere = new Filiere();\r\n\r\n        Menu menu = new Menu();\r\n\r\n        menu.Menu();\r\n\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/main.java b/src/main/java/main.java
+--- a/src/main/java/main.java	(revision 715889f0c29fd75df996120d8fb0364ad4c172f2)
++++ b/src/main/java/main.java	(date 1657178007050)
+@@ -10,7 +10,5 @@
+         Menu menu = new Menu();
+ 
+         menu.Menu();
+-
+-
+     }
+ }
