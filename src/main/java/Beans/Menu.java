@@ -6,8 +6,8 @@ public class Menu {
 
     Etudiant etude = new Etudiant();
     Filiere filiere = new Filiere();
-    public void Menu() {
-        int choix = 0;
+    public void menuAffiche() {
+        int choix;
         Scanner sc = new Scanner(System.in);
 
         do {
@@ -40,17 +40,17 @@ public class Menu {
                     break;
                 case 2:
                     etude.AjoutEtudiant();
-                    filiere.AjoutFilière();
+                    filiere.AjoutFiliere();
                     break;
                 case 3:
                     etude.affichageEtudiant();
-                    filiere.affichageFilière();
+                    filiere.affichageFiliere();
                     break;
                 case 4:
                     etude.AjoutEtudiantSaisie();
                     break;
                 case 5:
-                    filiere.AjoutFilièretSaisie();
+                    filiere.AjoutFilieretSaisie();
                     break;
                 case 6:
                     etude.suppressionEtudiant();

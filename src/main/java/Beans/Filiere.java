@@ -48,12 +48,12 @@ public class Filiere {
             //étape 5: fermez l'objet de connexion
             conn.close();
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 
 
-    public void affichageFilière() {
+    public void affichageFiliere() {
         try {
             //étape 1: charger la classe de driver
             Class.forName("org.postgresql.Driver");
@@ -72,10 +72,10 @@ public class Filiere {
             //étape 5: fermez l'objet de connexion
             conn.close();
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
-    public void AjoutFilière() {
+    public void AjoutFiliere() {
         try {
             //étape 1: charger la classe driver
             Class.forName("org.postgresql.Driver");
@@ -98,12 +98,12 @@ public class Filiere {
             //étape 5: fermez l'objet de connexion
             conn.close();
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 
 
-    public void AjoutFilièretSaisie() {
+    public void AjoutFilieretSaisie() {
         try {
             //étape 1: charger la classe driver
             Class.forName("org.postgresql.Driver");
@@ -135,7 +135,7 @@ public class Filiere {
             //étape 5: fermez l'objet de connexion
             conn.close();
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
     public void suppressionFiliere() {
@@ -159,7 +159,7 @@ public class Filiere {
             //étape 5: fermez l'objet de connexion
             conn.close();
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
         }

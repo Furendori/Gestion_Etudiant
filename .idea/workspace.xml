@@ -6,12 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d9654dca-02b8-453e-be4e-6b4e9ad71654" name="Changes" comment="Ariana love &lt;3">
       <change afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2022_10_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_07_2022_10_54__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Beans/Etudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Beans/Etudiant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Beans/Filiere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Beans/Filiere.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Beans/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Beans/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +53,8 @@
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Gestion_Etudiant" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -64,7 +62,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -119,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657185204893</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Ariana love &lt;3">
+      <created>1657185992610</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657185992610</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -34,7 +34,7 @@ public class Etudiant {
             //étape 5: fermez l'objet de connexion
             conn.close();
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
         public void affichageEtudiant() {
@@ -57,7 +57,7 @@ public class Etudiant {
                 //étape 5: fermez l'objet de connexion
                 conn.close();
             } catch (Exception e) {
-                System.out.println(e);
+                e.printStackTrace();
             }
         }
 
@@ -85,7 +85,7 @@ public class Etudiant {
                 //étape 5: fermez l'objet de connexion
                 conn.close();
             } catch (Exception e) {
-                System.out.println(e);
+                e.printStackTrace();
             }
         }
 
@@ -132,7 +132,7 @@ public class Etudiant {
                 //étape 5: fermez l'objet de connexion
                 conn.close();
             } catch (Exception e) {
-                System.out.println(e);
+                e.printStackTrace();
             }
         }
 
@@ -170,7 +170,7 @@ public class Etudiant {
                 //étape 5: fermez l'objet de connexion
                 conn.close();
             } catch (Exception e) {
-                System.out.println(e);
+                e.printStackTrace();
             }
 
         }
